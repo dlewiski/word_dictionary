@@ -38,3 +38,5 @@ end
    @words = Word.find(params[:id])
    erb(:output)
 end
+
+get('/output')

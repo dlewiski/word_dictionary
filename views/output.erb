@@ -1,2 +1,15 @@
-<%= @words.word %>
-<%= @words.definition %>
+<h2 class="well"><%= @words.word %>: <%= @words.definition %></h2>
+
+
+
+
+<form action="/output" method="post">
+  <div class="form-group">
+    <label for="newdefinition">Add another definition for <%= @words.word %>: </label>
+    <input id="newdefinition" name="newdefinition" class="form-control" type="text" autocomplete="off">
+  </div>
+  <button type="submit" class="btn btn-default">Add!</button>
+</form>
+
+
+<p><a href="/">Go Back</a></p>

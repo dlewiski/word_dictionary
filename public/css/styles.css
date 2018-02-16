@@ -1,0 +1,24 @@
+.formlayout {
+  width: 500px;
+  height: 500px;
+  display: block;
+  margin: 0 auto;
+  text-align:center;
+  background-color: lightpink;
+  padding: 10px;
+}
+
+.jumbotron {
+  background-image: url('../img/dictionary.jpg');
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Butterfly Kids', cursive;
+  font-weight:bold;
+}
+
+h2, body {
+  font-family: 'Indie Flower', cursive;
+}
