@@ -18,25 +18,16 @@ post('/') do
   erb(:input)
 end
 
-get('/') do
+post('/output') do
   word = params["word"]
   definition = params["definition"]
   new_word = Word.new({:word=>word, :definition=>definition})
   new_word.save()
   @words = Word.all()
-  erb(:input)
+  erb(:output)
 end
 
-post('/output') do
- word = params["word"]
- definition = params["definition"]
- @words = Word.all()
- erb(:output)
+get('/output/:id') do
+    @words = Word.find(params[:id])
+    erb(:output)
 end
-
- get('/output/:id') do
-   @words = Word.find(params[:id])
-   erb(:output)
-end
-
-get('/output')

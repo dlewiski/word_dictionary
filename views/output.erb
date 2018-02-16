@@ -1,15 +1,28 @@
-<h2 class="well"><%= @words.word %>: <%= @words.definition %></h2>
-
-
-
-
-<form action="/output" method="post">
-  <div class="form-group">
-    <label for="newdefinition">Add another definition for <%= @words.word %>: </label>
-    <input id="newdefinition" name="newdefinition" class="form-control" type="text" autocomplete="off">
+<div class="well">
+  <div class="row">
+    <div class="col-md-2">
+      <form action="/output" method="post">
+        <div class="form-group">
+          <button type="submit" class="btn btn-default" name="add"><i class="fas fa-plus"></i></button>
+        </div>
+      </form>
+      <form action="/output" method="post">
+        <div class="form-group">
+          <button type="submit" class="btn btn-default" name="edit"><i class="fas fa-pencil-alt"></i></button>
+        </div>
+      </form>
+      <form action="/" method="post">
+        <div class="form-group">
+          <button type="submit" class="btn btn-default" name="delete"><i class="fas fa-trash-alt"></i></button>
+        </div>
+      </form>
+      <form action="/" method="post">
+        <div class="form-group">
+          <button type="submit" class="btn btn-default" name="back"><a href="/"><i class="fas fa-undo-alt"></i></a></button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-8">
+      <h2><%= @words.word %>: <%= @words.definition %></h2>
+    </div>
   </div>
-  <button type="submit" class="btn btn-default">Add!</button>
-</form>
-
-
-<p><a href="/">Go Back</a></p>
