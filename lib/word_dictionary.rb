@@ -21,4 +21,13 @@ class Word
   def self.clear()
     @@dictionary = []
   end
+
+  def self.find(id)
+  word_id = id.to_i
+  @@dictionary.each do |definition|
+    if definition.id == word_id
+      return definition
+    end
+  end
+end
 end

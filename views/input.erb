@@ -1,0 +1,18 @@
+<h2>Add a word!</h2>
+
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="word">Word</label>
+    <input id="word" name="word" class="form-control" type="text" autocomplete="off">
+  </div>
+  <div class="form-group">
+    <label for="definition">Definition</label>
+    <input id="definition" name="definition" class="form-control" type="text" autocomplete="off">
+  </div>
+  <button type="submit" class="btn btn-default">Add Word</button>
+<form>
+
+<h2>Word Bank</h2>
+<% @words.each do |word| %>
+<p><a href="/output/<%= word.id %>"><%= word.word %></a></p>
+<% end %>
