@@ -1,6 +1,6 @@
 class Word
   @@dictionary = []
-  attr_accessor :word, :definition, :newdef
+  attr_accessor :word, :definition
   attr_reader :id
 
   def initialize(attributes)
