@@ -1,13 +1,18 @@
 class Word
   @@dictionary = []
-  attr_accessor :word, :definition
+  attr_accessor :word, :definition, :newdef
   attr_reader :id
 
   def initialize(attributes)
     @word = attributes.fetch(:word)
     @definition = attributes.fetch(:definition)
+    @newdef= []
 
     @id = @@dictionary.length + 1
+  end
+
+  def add_definition (newdef)
+    @newdef.push(newdef)
   end
 
   def save

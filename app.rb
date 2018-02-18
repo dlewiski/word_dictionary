@@ -20,19 +20,21 @@ post('/') do
 end
 
 get('/output/:id') do
-  newdef = params["newdef"]
   @words = Word.find(params[:id])
-  @news = News.find(params[:id])
+  @new_definition = @words.new_definition
+
   erb(:output)
 end
 
 
 post('/output/:id') do
   @words = Word.find(params[:id])
-  @news = News.find(params[:id])
+  new_def = params["newdef"]
+  new_definition = News.new({:new_def=>new_def})
+  @words.add_definition(new_def)
+  @new_definition = @words.new_definition
   erb(:output)
 end
-
 
 
 get('/output/<%= word.id %>') do

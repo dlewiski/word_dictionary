@@ -3,9 +3,10 @@
     <div class="col-md-3">
 
       <button type="submit" class="btn btn-default" id="add"><i class="fas fa-plus"></i></button>
-      <form action="/output/:id" method="post" class="new_def">
+      <form action="/output/:id" method="post" class="newdef">
         <div class="form-group"><br>
-          <input type="text" name="newdef"><button type="submit" name="button" class="btn btn-danger">Add</button>
+          <input type="text" name="newdef">
+          <button type="submit" name="button" class="btn btn-danger">Add</button>
         </div>
       </form>
       <br><br>
@@ -17,8 +18,6 @@
     </div>
     <div class="col-md-7">
       <h2><%= @words.word %>: <%= @words.definition %></h2>
-      <% @new_definition.each do |newdef| %>
-        <p><%= newdef %></p>
-      <% end %>
+      <h2><%= @words.word %>: <%= @words.newdef %></h2>
     </div>
   </div>

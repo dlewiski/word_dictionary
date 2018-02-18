@@ -1,17 +1,8 @@
 class News
-  @@newdef = []
-  attr_accessor :newdef
+  attr_accessor :new_def
 
   def initialize(attributes)
-    @newdef = attributes.fetch(:newdef)
-  end
-
-  def save
-    @@newdef.push(self)
-  end
-
-  def self.all()
-    @@newdef
+    @new_definition = attributes.fetch(:new_def)
   end
 
 end
