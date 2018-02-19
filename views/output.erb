@@ -15,9 +15,11 @@
     </div>
     <div class="col-md-7">
       <h2><%= @word.word %>:</h2>
-        <% @word.definition_list.each do |definition| %>
-          <p><%= definition.definition %></p>
-        <% end %>
+        <div class="well">
+          <% @word.definition_list.each do |definition| %>
+            <p><%= definition.definition %></p>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
