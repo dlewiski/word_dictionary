@@ -1,38 +1,37 @@
 require 'rspec'
-require 'word_dictionary'
+require 'definitions'
+require 'words'
 require 'pry'
-
 
 describe('word_dictionary') do
   before() do
-    Word.clear
+    Words.clear
   end
 end
 
 describe("#save") do
-  it("takes input from the user and adds it to a list of contacts") do
-  new_word = Word.new({:word=>"Jimichanga",  :definition=>"Just like a chimichanga but better!"})
+  it("takes word and definition from the user and saves it") do
+  new_word = Words.new({:word=>"Jimichanga", :definition_list=>"Just like a chimichanga but better!"})
   new_word.save()
-  expect(Word.all()).to(eq([new_word]))
   end
 end
 
 describe(".clear") do
   it ('clears the array') do
-    new_word = Word.new(:word => "Jimichanga", :definition =>"Just like a chimichanga but better!")
+    new_word = Words.new(:word => "Jimichanga", :definition_list =>"Just like a chimichanga but better!")
     new_word.save()
-    Word.clear()
-    expect(Word.all()).to(eq([]))
+    Words.clear()
+    expect(Words.all()).to(eq([]))
   end
 end
 
 describe("#id") do
     it("adds one to the id") do
-      new_word = Contact.new({:name1 => 'joe', :name2 => 'smith', :address => '123 fake st', :job => 'Banker'})
-      item.save()
-      item2 = Contact.new({:name1 => 'big', :name2 => 'rodger', :address => '503 Rodger Ave', :job => 'Library'})
-      item2.save()
-      expect(item.id()).to(eq(1))
-      expect(item2.id()).to(eq(2))
+      new_word = Words.new({:word=>"Chimichanga"})
+      new_word.save()
+      new_word2 = Words.new({:word=>"Tamale"})
+      new_word2.save()
+      expect(new_word.id()).to(eq(1))
+      expect(new_word2.id()).to(eq(2))
     end
   end

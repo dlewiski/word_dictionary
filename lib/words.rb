@@ -1,23 +1,22 @@
-class Word
+class Words
   @@dictionary = []
-  attr_accessor :word, :definition, :newdef
+  attr_accessor :word, :definition_list
   attr_reader :id
 
   def initialize(attributes)
-    @word = attributes.fetch(:word)
-    @definition = attributes.fetch(:definition)
-    @newdef= []
-
+    @word = attributes[:word]
+    @definition_list = []
     @id = @@dictionary.length + 1
   end
 
-  def add_definition (newdef)
-    @newdef.push(newdef)
+  def add_definition (definition)
+    @definition_list.push(definition)
   end
 
   def save
     @@dictionary.push(self)
   end
+
 
   def self.all()
     @@dictionary

@@ -23,6 +23,6 @@ h2, body {
   font-family: 'Indie Flower', cursive;
 }
 
-.newdef {
+#new_def {
   display:none;
 }

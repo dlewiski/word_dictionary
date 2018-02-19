@@ -1,14 +1,12 @@
 <div class="well">
   <div class="row">
     <div class="col-md-3">
-
       <button type="submit" class="btn btn-default" id="add"><i class="fas fa-plus"></i></button>
-      <form action="/output/:id" method="post" class="new_def">
+      <form action="/output/<%= @word.id %>" method="post" id="new_def">
         <div class="form-group"><br>
-          <input type="text" name="newdef"><button type="submit" name="button" class="btn btn-danger">Add</button>
+          <input type="text" name="definition"><button type="submit" class="btn btn-danger">Add</button>
         </div>
       </form>
-      <br><br>
       <form action="/">
         <div class="form-group">
           <button type="submit" class="btn btn-default" name="back"><a href="/"><i class="fas fa-undo-alt"></i></a></button>
@@ -16,9 +14,10 @@
       </form>
     </div>
     <div class="col-md-7">
-      <h2><%= @words.word %>: <%= @words.definition %></h2>
-      <% @new_definition.each do |newdef| %>
-        <p><%= newdef %></p>
-      <% end %>
+      <h2><%= @word.word %>:</h2>
+        <% @word.definition_list.each do |definition| %>
+          <p><%= definition.definition %></p>
+        <% end %>
     </div>
   </div>
+</div>
